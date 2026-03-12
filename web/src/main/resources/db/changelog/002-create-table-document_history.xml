@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="002" author="Svetlana Rozanova">
+
+        <!-- Создание таблицы document_history -->
+        <createTable tableName="document_history">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="document_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_history_document" references="documents(id)"/>
+            </column>
+            <column name="initiator" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="action" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment" type="text"/>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Индекс document_history -->
+        <createIndex indexName="idx_history_document_id" tableName="document_history">
+            <column name="document_id"/>
+        </createIndex>
+
+    </changeSet>
+</databaseChangeLog>
