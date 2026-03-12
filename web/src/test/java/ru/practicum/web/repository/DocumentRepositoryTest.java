@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.data.domain.Page;
@@ -13,7 +14,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import ru.practicum.web.model.Document;
 import ru.practicum.web.model.enums.DocumentStatus;
-import ru.practicum.web.repository.DocumentRepository;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -25,6 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 
 @DataJpaTest
 @DisplayName("Тесты DocumentRepository")
+@AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
 class DocumentRepositoryTest {
 
     @Autowired
