@@ -6,10 +6,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.web.dto.document.DocumentRequest;
 import ru.practicum.web.dto.document.DocumentResponse;
-import ru.practicum.web.mapper.DocumentMapper;
 import ru.practicum.web.model.Document;
 import ru.practicum.web.model.DocumentHistory;
 import ru.practicum.web.model.enums.DocumentStatus;
@@ -21,7 +19,6 @@ import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-@Transactional
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @DisplayName("Тесты DocumentMapper")
@@ -186,7 +183,7 @@ class DocumentMapperTest {
                     () -> assertThat(result.getStatus()).isEqualTo(DocumentStatus.DRAFT),
                     () -> assertThat(result.getCreatedAt()).isNull(),
                     () -> assertThat(result.getUpdatedAt()).isNull(),
-                    () -> assertThat(result.getHistory()).isNull()
+                    () -> assertThat(result.getHistory()).isEmpty()
             );
         }
 
@@ -234,7 +231,7 @@ class DocumentMapperTest {
                     () -> assertThat(result.getDocumentNumber()).isNull(),
                     () -> assertThat(result.getCreatedAt()).isNull(),
                     () -> assertThat(result.getUpdatedAt()).isNull(),
-                    () -> assertThat(result.getHistory()).isNull()
+                    () -> assertThat(result.getHistory()).isEmpty()
             );
         }
     }

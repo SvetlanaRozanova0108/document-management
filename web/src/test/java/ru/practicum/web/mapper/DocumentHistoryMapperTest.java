@@ -1,5 +1,6 @@
 package ru.practicum.web.mapper;
 
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import ru.practicum.web.dto.document.DocumentHistoryDto;
-import ru.practicum.web.mapper.DocumentHistoryMapper;
 import ru.practicum.web.model.Document;
 import ru.practicum.web.model.DocumentHistory;
 import ru.practicum.web.model.enums.DocumentStatus;
@@ -25,6 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @DisplayName("Тесты DocumentHistoryMapper")
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 class DocumentHistoryMapperTest {
 
     @Autowired
