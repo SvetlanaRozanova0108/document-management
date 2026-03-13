@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.springframework.web.client.RestTemplate;
-import ru.practicum.web.dto.document.DocumentRequest;
+import ru.practicum.utility.dto.DocumentRequest;
 
 @Slf4j
 @Component

@@ -1,5 +1,6 @@
 package ru.practicum.web.repository;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.practicum.web.model.Document;
@@ -12,6 +13,7 @@ import java.util.List;
 public interface SearchRepository extends JpaRepository<Document, Long> {
 
     // Поиск по статусу
+    List<Document> findByStatus(DocumentStatus status, Pageable pageable);
     List<Document> findByStatus(DocumentStatus status);
 
     // Поиск по автору (точное совпадение)

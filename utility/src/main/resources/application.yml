@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: utility
+
+app:
+  generator:
+    api-url: http://localhost:8080/api/documents
+    threads: 5
+    batch-size: 50
+    count: 100
+
+logging:
+  level:
+    ru.practicum.utility.processes: DEBUG
+    org.springframework: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

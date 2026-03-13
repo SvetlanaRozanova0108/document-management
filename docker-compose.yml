@@ -14,6 +14,17 @@ services:
     networks:
     - document-network
 
+  web:
+    build: web
+    container_name: web
+    ports:
+      - "1080:8080"
+    networks:
+      - document-network
+    environment:
+      spring__datasource__url: jdbc:postgresql://postgres:5432/documentdb
+      spring__datasource__username: postgres
+      spring__datasource__password: postgres
 
 networks:
   document-network:
