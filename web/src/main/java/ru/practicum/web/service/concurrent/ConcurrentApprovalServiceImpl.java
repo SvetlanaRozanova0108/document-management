@@ -201,27 +201,6 @@ public class ConcurrentApprovalServiceImpl implements ConcurrentApprovalService{
         }
     }
 
-//    // Запускает тест с дополнительными параметрами
-//    @Override
-//    @Transactional
-//    public ConcurrentResult concurrentApprovalSimple(Long documentId, int threads, int attempts,
-//                                                     boolean resetDocument, String initiator) {
-//        if (resetDocument) {
-//            Document document = documentRepository.findById(documentId)
-//                    .orElseThrow(() -> new DocumentNotFoundException(
-//                            "Document not found: " + documentId));
-//            resetDocumentForTest(document);
-//        }
-//
-//        ConcurrentRequest request = new ConcurrentRequest();
-//        request.setDocumentId(documentId);
-//        request.setThreads(threads);
-//        request.setAttempts(attempts);
-//        request.setInitiator(initiator);
-//
-//        return runConcurrentApproval(request);
-//    }
-
     // Проверяет, что после теста в реестре ровно одна запись
     @Override
     @Transactional(readOnly = true)

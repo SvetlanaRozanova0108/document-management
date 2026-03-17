@@ -131,13 +131,6 @@ public class DocumentController {
     })
     public ResponseEntity<List<DocumentResponse>> searchDocuments(DocumentSearchRequest request) {
 
-//            @RequestParam(required = false) @Parameter(description = "Статус документа") DocumentStatus status,
-//            @RequestParam(required = false) @Parameter(description = "Автор документа") String author,
-//            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-//            @Parameter(description = "Начало периода (ISO формат)") LocalDateTime dateFrom,
-//            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-//            @Parameter(description = "Конец периода (ISO формат)") LocalDateTime dateTo) {
-
         log.info("Request to search documents with filters: status={}, author={}, dateFrom={}, dateTo={}",
                 request.getStatus(), request.getAuthor(), request.getDateFrom(), request.getDateTo());
 

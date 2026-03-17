@@ -45,24 +45,6 @@ public class ConcurrentController {
         return ResponseEntity.ok(result);
     }
 
-//    @PostMapping("/approval/{documentId}")
-//    @Operation(summary = "Запустить тест с параметрами в пути")
-//    public ResponseEntity<ConcurrentResult> concurrentApprovalSimple(
-//            @PathVariable @Min(1) Long documentId,
-//            @RequestParam(defaultValue = "10") int threads,
-//            @RequestParam(defaultValue = "5") int attempts,
-//            @RequestParam(defaultValue = "test-user") String initiator,
-//            @RequestParam(defaultValue = "true") boolean resetDocument) {
-//
-//        log.info("Request to test concurrent approval for document {} with {} threads and {} attempts",
-//                documentId, threads, attempts);
-//
-//        ConcurrentResult result = concurrentService.concurrentApprovalSimple(
-//                documentId, threads, attempts, resetDocument, initiator);
-//
-//        return ResponseEntity.ok(result);
-//    }
-
     @GetMapping("/approval/{documentId}/status")
     @Operation(summary = "Проверить статус документа после теста")
     public ResponseEntity<Map<String, Object>> checkDocumentStatus(

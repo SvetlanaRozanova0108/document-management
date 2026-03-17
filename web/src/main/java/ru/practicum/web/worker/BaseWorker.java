@@ -65,14 +65,6 @@ public abstract class BaseWorker {
 
     protected abstract WorkerResult doWork();
 
-    protected String getWorkerName() {
-        return workerName;
-    }
-
-    protected int getBatchSize() {
-        return batchSize;
-    }
-
     @lombok.Value
     protected static class WorkerResult {
         int processed;

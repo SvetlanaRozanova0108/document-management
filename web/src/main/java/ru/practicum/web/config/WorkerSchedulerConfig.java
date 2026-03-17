@@ -2,7 +2,6 @@ package ru.practicum.web.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -13,7 +12,6 @@ import ru.practicum.web.worker.WorkerStatistics;
 @Slf4j
 @Configuration
 @EnableScheduling
-//@EnableConfigurationProperties(WorkerProperties.class)
 @RequiredArgsConstructor
 public class WorkerSchedulerConfig {
 

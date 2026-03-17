@@ -6,8 +6,8 @@ app:
   generator:
     api-url: http://localhost:8080/api/documents
     threads: 5
-    batch-size: 50
-    count: 100
+    batch-size: 500
+    count: 100000
 
 logging:
   level:

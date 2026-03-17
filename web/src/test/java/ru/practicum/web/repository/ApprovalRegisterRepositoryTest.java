@@ -63,7 +63,7 @@ class ApprovalRegisterRepositoryTest {
         document3.setDocumentNumber("DOC-003");
         document3.setAuthor("Сидоров С.С.");
         document3.setTitle("Документ 3");
-        document3.setStatus(DocumentStatus.SUBMITTED); // Не утвержден
+        document3.setStatus(DocumentStatus.SUBMITTED);
         document3.setCreatedAt(now.minusDays(1));
         document3.setUpdatedAt(now.minusDays(1));
         entityManager.persist(document3);

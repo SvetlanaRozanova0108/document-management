@@ -38,13 +38,10 @@ class ConcurrentApprovalServiceTest {
 
     @Mock
     private DocumentService documentService;
-
     @Mock
     private DocumentRepository documentRepository;
-
     @Mock
     private ApprovalRegisterRepository registerRepository;
-
     @InjectMocks
     private ConcurrentApprovalServiceImpl testService;
 
