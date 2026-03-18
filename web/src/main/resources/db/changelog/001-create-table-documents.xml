@@ -45,5 +45,16 @@
             <column name="created_at"/>
         </createIndex>
 
+        <createIndex indexName="idx_documents_status_created" tableName="documents">
+            <column name="status"/>
+            <column name="created_at"/>
+        </createIndex>
+
+        <createIndex indexName="idx_documents_status_created_author" tableName="documents">
+            <column name="status"/>
+            <column name="created_at"/>
+            <column name="author"/>
+        </createIndex>
+
     </changeSet>
 </databaseChangeLog>
